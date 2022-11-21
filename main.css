@@ -54,5 +54,6 @@
     border: 1px solid #ddd; /* Add a grey border */
     margin-bottom: 20px; /* Add some space below the input */
   }
- 
-
+  table th:nth-child(3), td:nth-child(3) {
+    display: none;
+  }

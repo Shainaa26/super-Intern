@@ -1,8 +1,8 @@
-fetch("https://random-data-api.com/api/users/random_user?size=100").then((data)=>{
+fetch("https://random-data-api.com/api/users/random_user?size=10").then((data)=>{
    return data.json();
-
+   console.log(data);
 } ). then((objectData)=> {
-   console.log(objectData[0].title);
+   console.log(objectData[5]);
    let tableData="";
    objectData.map((values)=> {
       tableData+=`  
@@ -16,6 +16,12 @@ fetch("https://random-data-api.com/api/users/random_user?size=100").then((data)=
    });
    document.getElementById("table_body").innerHTML= tableData;
 } )   
+$(document).ready(function() {
+   $('#myTable').DataTable( {
+       responsive: true,
+       "pageLength": 10
+   } );
+} );
 
 function myFunction() {
   var input, filter, table, tr, td, i, txtValue;
@@ -91,4 +97,5 @@ function myFunction2() {
        }
      }
    }
- }
+}
+
