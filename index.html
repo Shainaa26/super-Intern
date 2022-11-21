@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fetch data from API in tabular form</title>
     <link href= "https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" >
+    <link rel="stylesheet"
+        href=
+"https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">
     <link href="main.css" rel="stylesheet"/>
+    
 </head>
 <body>
     <h1 class = "text-center"> Storing  API Data in table</h1>
@@ -15,7 +19,7 @@
  <input type="text" id="myInput2" onkeyup="myFunction2()" placeholder="Search for email..">
  <input type="text" id="myFilter" onkeyup="myFunction3()" placeholder="Filter by city..">
  <input type="text" id="myFilter2" onkeyup="myFunction4()" placeholder="Filter by subscription status..">
-    <table id= "myTable" class="table table-bordered table-striped">
+    <table id= "myTable" class="table table-bordered table-striped" data-page-length="10" data-order="[[ 1, &quot;asc&quot; ]]" >
         <thead class="table-dark">
             <tr>
                 <th scope = "col">username</th>
@@ -23,14 +27,12 @@
                 <th scope = "col">Gender</th>
                 <th scope = "col">City</th>
                 <th scope = "col">Subscription Status</th>
-                <th scope = "col">count</th>
             </tr>
         </thead>
-        <tbody id="table_body" >
-         
+        <tbody id="table_body" >          
         </tbody>
       </table>
-      <div class=" "pagination">
+      <div class= "pagination">
         <button class= "btn1" onclick="backBtn()">prev</button>
         <ul>
             <li class="link active" value = "1" onclick="activeLink()">1</li>
@@ -77,5 +79,7 @@
         }
         </script>
     <script src="main.js"></script>
+
+ 
 </body>
 </html> 
